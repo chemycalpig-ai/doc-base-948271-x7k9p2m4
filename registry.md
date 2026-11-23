@@ -271,4 +271,4 @@
 > ✅ **«Симметричная яма»** — не мина и не правило: устное обозначение перевеса в зоне Ур.5.
 
 **Эталонные длины на 23.11.2026** (после патча Р92; при замене файла сверять с ними, сокращение >10% = стоп):
-instructor.md 9 081 · instructor_2.md 20 316 · instructor_3.md 18 673 · wiki.md 9 229 · wiki_2.md 5 324 · wiki_3.md 18 723 · archive.md 9 740 · archive_2.md 12 705 · archive_3.md 12 857 · registry.md 19 923 · registry_2.md 29 571 · dopinfo.md 34 963 · Lablog.md 30 953 · Lablog_2..5.md 23 243 / 22 332 / 22 320 / 23 004. Цифры в письме-передаче (≈27 000, ≈44 500, ≈33 800) считать устаревшими.
+instructor.md 9 081 · instructor_2.md 20 316 · instructor_3.md 18 673 · wiki.md 9 229 · wiki_2.md 5 324 · wiki_3.md 18 723 · archive.md 9 740 · archive_2.md 12 705 · archive_3.md 12 857 · registry.md 20 008 · registry_2.md 29 571 · dopinfo.md 34 963 · Lablog.md 30 953 · Lablog_2..5.md 23 243 / 22 332 / 22 320 / 23 004. Цифры в письме-передаче (≈27 000, ≈44 500, ≈33 800) считать устаревшими.
