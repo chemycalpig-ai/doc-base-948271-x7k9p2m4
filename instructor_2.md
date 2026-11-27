@@ -146,7 +146,8 @@
 ⛔ Не работает: `understat.com`, `fbref.com` — футбольного xG нет.
 
 **Сезонные ориентиры (снимать до анализа):**
-SV% по вратарям НХЛ **89,70%** (50 квалифицированных). ⚠️ Не путать с 90,46% — командный агрегат. ⚠️ Обновлено 21.11: hockey-reference по всем ситуациям — **.892 НХЛ** (346 игр) и **.9169 КХЛ** (30 вратарей). Сравнивать только внутри одного источника.
+SV% по вратарям НХЛ \*\*89,70%\*\* (50 квалифицированных). ⚠️ Срез 27.11.2026 по 32 стартерам даёт медиану \*\*.888\*\* — ориентир .892 больше не описывает лигу; для порогов ямы/дуэли считать от фактического среза, а не от константы.
+ ⚠️ Не путать с 90,46% — командный агрегат. ⚠️ Обновлено 21.11: hockey-reference по всем ситуациям — **.892 НХЛ** (346 игр) и **.9169 КХЛ** (30 вратарей). Сравнивать только внутри одного источника.
 Дом НХЛ 2026/27: **53,03%** (330 игр, 175 побед хозяев) — это +3,0 п.п. от 50%, в баллы не входит.
 По способу победы (25 258 игр): осн. время 55,5%, ОТ 52,2%, буллиты 49,3%. КХЛ: хозяева 52,64% (907 из 1 723).
 **База матчей за пределами 60 минут:** НХЛ **23,01%**, КХЛ **21,67%**. Проверка: Σочков = 2G + N_ОТ, значит N_ОТ/G = очки на игру − 2.
@@ -161,7 +162,9 @@ SV% по вратарям НХЛ **89,70%** (50 квалифицированны
 | Игровой день | `api-web.nhle.com/v1/schedule/ГГГГ-ММ-ДД` | numberOfGames, счета, gameId |
 | Матч + игроки | `/v1/gamecenter/<id>/boxscore` | sog, вратари SA/SV/SV%, `gameState` |
 | Скамеечники | `/v1/gamecenter/<id>/right-rail` | scratches, тренеры, H2H |
-| Клубный темп | `/v1/club-stats/<TEAM>/now` | shootingPctg, FO%, TOI. Коды: NJD (не NJ), MTL, DET, BOS, TBL, VGK, LAK, SJS |
+| Клубный темп | `/v1/club-stats//now` | shootingPctg, FO%, TOI. Коды: NJD (не NJ), MTL, DET, BOS, TBL, VGK, LAK, SJS |
+| **SV% вратарей лиги** | `api.nhle.com/stats/rest/en/goalie/summary?limit=200&cayenneExp=seasonId=20262027 and gameTypeId=2` | 79 вратарей: GP, GS, SA, SV, **savePct**, GAA, shutouts. Один вызов = вся лига. Скан в автозапуск. Проверено 27.11.2026 |
+
 | Расписание клуба | `/v1/club-schedule/<TEAM>/week\|month\|season/now` | даты, счёт, **тип периода** |
 | Таблица | `/v1/standings/now` | ⚠️ снимок отстаёт до 5 дней — для классов НЕ использовать (З3) |
 
@@ -184,7 +187,8 @@ SV% по вратарям НХЛ **89,70%** (50 квалифицированны
 **`ria.ru/ep_event/<id>.html`** — счёт, **минуты голов**, составы, зрители ‹Р89›. Таблицы лиг — `espn.co.uk/football/table/_/league/<код>.1`.
 
 ### 🔴 ЗАПРЕЩЁННЫЕ / НЕРАБОЧИЕ
-`khl.ru/game/*` · `khl.ru/standings` (JS) · `sports.ru/.../online|statistics|odds` · `championat.com` матчи · `understat.com` · `fbref.com` · `moneypuck.com` · `naturalstattrick` с параметрами · `hd.kinopoisk.ru/sport` · `metallurg.ru/news` · `hctraktor.org/media/news` · `vsin.com` · `pinnacle.com` хабы · **xGOT** · **GSAx** · **xG по КХЛ** · `allhockey.ru/.../protocol` · `allhockey.ru/news/show/<id>` с таблицей · `nhlstars.kulichki.net/khl/score/2027/*` · `rusbiathlon` список результатов (одна строка 42 тыс.) · **`sports.ru` страницы матчей футбола** (промежуточный счёт).
+`khl.ru/game/*` · `khl.ru/standings` (JS) · `sports.ru/.../online|statistics|odds` · `championat.com` матчи · `understat.com` · `fbref.com` · `moneypuck.com` · `naturalstattrick` с параметрами · `hd.kinopoisk.ru/sport` · `metallurg.ru/news` · `hctraktor.org/media/news` · `vsin.com` · `pinnacle.com` хабы · **xGOT** · **GSAx** · **xG по КХЛ** · `allhockey.ru/.../protocol` · `allhockey.ru/news/show/<id>` с таблицей · `nhlstars.kulichki.net/khl/score/2027/*` · `rusbiathlon` список результатов (одна строка 42 тыс.) · \*\*`sports.ru` страницы матчей футбола\*\* (промежуточный счёт) · \*\*`espn.com/nhl/stats/player/_/view/goaltending`\*\* (пусто, 27.11) · \*\*`club-stats/<клуб>/now/goalies`\*\* (подпуть не существует) · \*\*`quanthockey …/goalie-stats.html`\*\* (не отдаётся) · \*\*`en.khl.ru/stat/goalkeepers`\*\* (не отдаётся).
+
 
 ### 🔴 ОПАСНЫЕ — отдают данные ЧУЖОГО матча
 `liveresult.ru` («3:1, броски 19-25» вместо 6:5) · `matchtv.ru` («в серии буллитов» внутри «в основном 2:2») · `allhockey.ru/news/587446`.
